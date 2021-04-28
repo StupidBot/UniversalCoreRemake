@@ -1,0 +1,34 @@
+version: 2
+registries:
+  git-github-com:
+    type: git
+    url: https://github.com
+    username: x-264517826
+    password: "${{secrets.GIT_GITHUB_COM_PASSWORD}}"
+
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: org.spigotmc:spigot
+    versions:
+    - "> 1.8.8-R0.1-SNAPSHOT"
+  - dependency-name: org.spigotmc:spigot-api
+    versions:
+    - "> 1.8-R0.1-SNAPSHOT"
+  - dependency-name: com.sk89q.worldedit:worldedit-bukkit
+    versions:
+    - 7.2.2
+    - 7.2.3
+    - 7.2.4
+  - dependency-name: xyz.upperlevel.spigot.book:spigot-book-api
+    versions:
+    - "1.4"
+  - dependency-name: com.comphenix.protocol:ProtocolLib
+    versions:
+    - 4.5.1
+  registries:
+  - git-github-com
